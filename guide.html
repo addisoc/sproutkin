@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide — Sproutkin</title>
+    <meta name="description" content="Learn how to use Sproutkin to track your baby's feeds, sleep, diapers, milestones, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .guide-section { margin: 40px 0; }
+        .guide-section h2 { font-size: 1.7rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+        .guide-section .section-desc { color: var(--muted); margin: 0 0 24px; font-size: 1.05rem; }
+
+        .steps { display: flex; flex-direction: column; gap: 16px; }
+        .step {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 22px 24px; box-shadow: var(--shadow); display: flex; gap: 18px; align-items: flex-start;
+        }
+        .step-num {
+            flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+            background: var(--ink); color: #fff; display: grid; place-items: center;
+            font-weight: 700; font-size: 0.9rem;
+        }
+        .step-body h3 { margin: 0 0 4px; font-size: 1.05rem; }
+        .step-body p { margin: 0; color: var(--muted); }
+
+        .tip {
+            background: rgba(42, 157, 143, 0.08); border: 1px solid rgba(42, 157, 143, 0.25);
+            border-radius: 12px; padding: 14px 18px; display: flex; gap: 10px; align-items: flex-start;
+            margin: 14px 0;
+        }
+        .tip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+        .tip p { margin: 0; color: var(--ink); font-size: 0.95rem; }
+        .tip strong { color: var(--teal); }
+
+        .activity-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+        .activity-type {
+            background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+            padding: 18px 20px; box-shadow: var(--shadow);
+        }
+        .activity-type .icon { font-size: 1.6rem; margin-bottom: 8px; }
+        .activity-type h3 { margin: 0 0 4px; font-size: 1rem; }
+        .activity-type p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+        .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+        .screenshot-placeholder {
+            background: var(--border); border-radius: var(--radius);
+            aspect-ratio: 9 / 19.5; max-width: 260px;
+            display: grid; place-items: center; color: var(--muted);
+            font-size: 0.85rem; text-align: center; padding: 16px;
+            margin: 0 auto;
+        }
+        .screenshots-row {
+            display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 24px 0;
+        }
+        .screenshot-wrap { text-align: center; }
+        .screenshot-wrap figcaption { margin-top: 8px; font-size: 0.85rem; color: var(--muted); }
+        .screenshot-wrap img {
+            width: 260px; border-radius: var(--radius);
+            box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+
+        .toc {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 22px 26px; box-shadow: var(--shadow); margin-bottom: 36px;
+        }
+        .toc h2 { margin: 0 0 14px; font-size: 1.1rem; }
+        .toc ol { margin: 0; padding-left: 20px; }
+        .toc li { margin: 6px 0; }
+        .toc a { color: var(--teal); }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html"><span class="logo">🍼</span> Sproutkin</a>
+        <nav class="nav">
+            <a href="index.html#features">Features</a>
+            <a href="guide.html">Guide</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
+
+    <main class="wrap page">
+        <h1>User Guide</h1>
+        <p class="updated">Everything you need to get the most out of Sproutkin.</p>
+
+        <div class="toc">
+            <h2>On this page</h2>
+            <ol>
+                <li><a href="#track">Tracking activities</a></li>
+                <li><a href="#feeds">Feeds in detail</a></li>
+                <li><a href="#log">Log &amp; timeline</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#milestones">Milestones</a></li>
+                <li><a href="#reminders">Reminders</a></li>
+                <li><a href="#sharing">Sharing &amp; backup</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ol>
+        </div>
+
+        <!-- Track -->
+        <section class="guide-section" id="track">
+            <h2>Tracking activities</h2>
+            <p class="section-desc">The Track tab is your home base — a grid of every activity you care about, one tap away.</p>
+
+            <div class="activity-types">
+                <div class="activity-type">
+                    <div class="icon">🍼</div>
+                    <h3>Feeds</h3>
+                    <p>Breast, bottle, or solid food. Each has its own detail options.</p>
+                </div>
+                <div class="activity-type">
+                    <div class="icon">😴</div>
+                    <h3>Sleep</h3>
+                    <p>Start a timer when baby goes down, stop it when they wake up.</p>
+                </div>
+                <div class="activity-type">
+                    <div class="icon">🚿</div>
+                    <h3>Diaper</h3>
+                    <p>Quick log with wet, dirty, or mixed options.</p>
+                </div>
+                <div class="activity-type">
+                    <div class="icon">✨</div>
+                    <h3>Custom</h3>
+                    <p>Add anything else — tummy time, bath, vitamin, walk, and more.</p>
+                </div>
+            </div>
+
+            <div class="tip" style="margin-top:24px">
+                <span class="tip-icon">💡</span>
+                <p><strong>Quick log:</strong> Tap an activity tile to log it instantly with no extra details. Tap the tile title or use the detail sheet to fill in amounts, durations, and notes.</p>
+            </div>
+
+            <h3 style="margin-top:28px; font-size:1.15rem;">Adding a custom activity</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Tap the + button</h3>
+                        <p>Found in the top-right corner of the Track tab.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Choose a name, icon, and color</h3>
+                        <p>Pick from a library of icons or use an emoji. Choose a color that makes it easy to spot in the grid.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>Set optional details</h3>
+                        <p>Turn on amount or note fields if you want to record more than just a timestamp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Feeds -->
+        <section class="guide-section" id="feeds">
+            <h2>Feeds in detail</h2>
+            <p class="section-desc">Sproutkin tracks three feed types, each with relevant detail fields.</p>
+
+            <div class="card" style="margin-bottom:16px">
+                <h3 style="margin-top:0">🤱 Breast</h3>
+                <p>Log which side you fed from (left, right, or both) and for how long. Sproutkin remembers the last side used and highlights the other one as a starting suggestion for the next session, so you never lose track.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:16px">
+                <h3 style="margin-top:0">🍼 Bottle</h3>
+                <p>Record the amount fed in your preferred unit (oz or ml — change this in Settings). Works for formula, expressed milk, or water.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:16px">
+                <h3 style="margin-top:0">🥣 Solids</h3>
+                <p>Enter the food name and optionally the amount. If you're introducing a new food and want to watch for a reaction, toggle <strong>Possible allergic reaction</strong> — this is reset automatically on each new solid feed so you only flag it when relevant.</p>
+                <div class="tip" style="margin-top:12px">
+                    <span class="tip-icon">ℹ️</span>
+                    <p>Allergy flags are surfaced in your log so you can quickly review reactions alongside what was eaten.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Log -->
+        <section class="guide-section" id="log">
+            <h2>Log &amp; timeline</h2>
+            <p class="section-desc">A full history of every entry, grouped by day, with a visual timeline.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Swipe to the Log tab</h3>
+                        <p>Entries are listed in reverse chronological order. Swipe up to load older days.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Tap any entry to edit it</h3>
+                        <p>Correct the time, amount, notes, or any other detail you logged.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>Swipe left to delete</h3>
+                        <p>Remove an entry if it was logged by mistake.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip" style="margin-top:20px">
+                <span class="tip-icon">⏱️</span>
+                <p><strong>Timer entries:</strong> Sleep and timed activities show their duration inline. The timeline view makes it easy to spot overlapping or unusually long sessions.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Analytics -->
+        <section class="guide-section" id="analytics">
+            <h2>Analytics</h2>
+            <p class="section-desc">Spot patterns across days and weeks — average feeds, sleep totals, and more.</p>
+
+            <div class="card">
+                <p style="margin-top:0">The Analytics tab breaks down your logged data into charts and summaries. Use the date range picker to zoom in on a specific period or see a longer-term trend. Each activity type can be toggled on or off so you can focus on what matters most right now.</p>
+            </div>
+
+            <div class="tip">
+                <span class="tip-icon">💡</span>
+                <p><strong>Customize what you see:</strong> Tap the settings icon in Analytics to choose which activities appear in your summary cards.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Milestones -->
+        <section class="guide-section" id="milestones">
+            <h2>Milestones</h2>
+            <p class="section-desc">Capture the moments that matter — first smile, first roll, first word.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Open the Milestones tab</h3>
+                        <p>You'll see a list of common developmental milestones, plus any you've added yourself.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Tap a milestone to record it</h3>
+                        <p>Add the date it happened and an optional note or memory.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>Add your own</h3>
+                        <p>Use the + button to create a custom milestone for anything the built-in list doesn't cover.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Reminders -->
+        <section class="guide-section" id="reminders">
+            <h2>Reminders</h2>
+            <p class="section-desc">Optional local notifications — no account required.</p>
+
+            <div class="card">
+                <p style="margin-top:0">You can set reminders for any activity. For example:</p>
+                <ul style="margin:8px 0 0; color:var(--muted)">
+                    <li><strong style="color:var(--ink)">Time-based:</strong> "Remind me to give vitamins every morning at 8 am."</li>
+                    <li><strong style="color:var(--ink)">Interval-based:</strong> "Remind me if it's been more than 3 hours since the last feed."</li>
+                    <li><strong style="color:var(--ink)">Supply-based:</strong> "Alert me when formula stock is running low, based on my average daily usage."</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top:24px; font-size:1.1rem;">Setting up a reminder</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Go to Settings → Reminders</h3>
+                        <p>Tap any activity to configure its reminder options.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Choose the reminder type and timing</h3>
+                        <p>Adjust the interval or specific time to fit your routine.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>Allow notifications when prompted</h3>
+                        <p>iOS will ask for permission the first time. You can also grant this in iOS Settings → Sproutkin → Notifications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip" style="margin-top:16px">
+                <span class="tip-icon">🌙</span>
+                <p><strong>Silence overnight:</strong> Use iOS Focus or Do Not Disturb to pause Sproutkin notifications during sleep hours — no extra setup needed in the app.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Sharing -->
+        <section class="guide-section" id="sharing">
+            <h2>Sharing &amp; backup</h2>
+            <p class="section-desc">Move your data between devices or share it with a co-caregiver using a <strong>.sproutkin</strong> file.</p>
+
+            <h3 style="font-size:1.1rem;">Exporting a backup</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Go to Settings → Backup &amp; Restore</h3>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Tap Export</h3>
+                        <p>A <code>.sproutkin</code> file is created and shared via the standard iOS share sheet. Save it to Files, iCloud Drive, or send it directly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.1rem; margin-top:28px;">Sharing with a co-caregiver</h3>
+            <div class="card">
+                <p style="margin-top:0">Sproutkin uses a safe insert-only merge — importing a <code>.sproutkin</code> file adds any entries that aren't already in your log, without overwriting anything. This means both caregivers can log independently and then merge their records by exchanging files.</p>
+                <ol style="margin:12px 0 0; color:var(--muted)">
+                    <li>Caregiver A exports their data and sends it to Caregiver B.</li>
+                    <li>Caregiver B opens the file and taps <strong>Import</strong>.</li>
+                    <li>New entries are added; duplicates are skipped automatically.</li>
+                </ol>
+            </div>
+
+            <div class="tip" style="margin-top:16px">
+                <span class="tip-icon">🔒</span>
+                <p>Files are never uploaded to any server. Sharing is entirely between devices, using the apps and services you already trust.</p>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Settings -->
+        <section class="guide-section" id="settings">
+            <h2>Settings</h2>
+            <p class="section-desc">Personalize the app to match how you work.</p>
+
+            <div class="card" style="margin-bottom:14px">
+                <h3 style="margin-top:0">Units of measurement</h3>
+                <p>Choose between <strong>oz</strong> and <strong>ml</strong> for volume. All amounts are converted automatically when you switch — past entries update too.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:14px">
+                <h3 style="margin-top:0">Reminders &amp; quiet hours</h3>
+                <p>Manage all reminders and set a quiet window to pause notifications overnight.</p>
+            </div>
+
+            <div class="card" style="margin-bottom:14px">
+                <h3 style="margin-top:0">Backup &amp; restore</h3>
+                <p>Export or import your data at any time. Useful when switching phones or sharing with a co-caregiver.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-top:0">Baby profile</h3>
+                <p>Update your baby's name, date of birth, and photo. The photo is stored only on your device.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© 2026 Addison Chung</span>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
